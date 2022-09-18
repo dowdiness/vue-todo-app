@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <link href="./index.css" rel="stylesheet">
+        <script type="module" src="./main.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vue Todo pp</title>
+    </head>
+    <body>
+        <div id="app" class="container flex flex-col items-center justify-center h-full px-6 mx-auto my-24 space-y-12">
+          <h1 class="text-4xl font-bold">Todo App Vue</h1>
+          <div class="w-full max-w-md pb-6">
+            <label for="email" class="block text-lg font-medium text-gray-700">Add Todo</label>
+            <div class="flex mt-4 rounded-md shadow-sm">
+              <div class="relative flex items-stretch flex-grow focus-within:z-10">
+                <input v-model="todo" type="text" name="todo" id="todo" class="block w-full pl-4 border-gray-300 rounded-none rounded-l-md focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Type your todo">
+              </div>
+              <button @click="addTodo" type="button" class="relative inline-flex items-center px-4 py-2 -ml-px space-x-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-r-md bg-gray-50 hover:bg-gray-100 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500">
+                <span>Add</span>
+              </button>
+            </div>
+          </div>
+          <div v-if="todos.length > 0" class="relative w-4/5">
+            <div class="absolute inset-0 flex items-center" aria-hidden="true">
+              <div class="w-full border-t border-gray-300"></div>
+            </div>
+            <div class="relative flex justify-center">
+              <span class="px-3 text-xl font-medium text-gray-900 bg-white">Todos</span>
+            </div>
+          </div>
+          <ul role="list" class="w-full max-w-md divide-y divide-gray-200">
+            <li v-for="todo in todos" class="relative py-5 bg-white ">
+              <div class="flex mt-1 rounded-md shadow-sm">
+                <div class="relative flex items-stretch flex-grow focus-within:z-10">
+                  <input v-model="todo.text" type="text" name="todo" id="todo" class="block w-full pl-4 border-gray-300 rounded-none rounded-l-md focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Type your todo">
+                </div>
+                <button @click="deleteTodo(todo)" type="button" class="relative inline-flex items-center px-4 py-2 -ml-px space-x-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-r-md bg-gray-50 hover:bg-gray-100 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500">
+                  <span>Delete</span>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </body>
+</html>
