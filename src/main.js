@@ -1,8 +1,5 @@
 const { ref, watchEffect, createApp } = Vue;
 
-globalThis.__VUE_OPTIONS_API__ = false;
-globalThis.__VUE_PROD_DEVTOOLS__ = false;
-
 const updateStorage = (value) =>
   localStorage.setItem("todos", JSON.stringify(value));
 
