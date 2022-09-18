@@ -1,4 +1,4 @@
-import { ref, watchEffect, createApp } from "vue/dist/vue.esm-bundler.js";
+const { ref, watchEffect, createApp } = Vue;
 
 globalThis.__VUE_OPTIONS_API__ = false;
 globalThis.__VUE_PROD_DEVTOOLS__ = false;
