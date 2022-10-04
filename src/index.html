@@ -31,7 +31,7 @@
             </div>
           </div>
           <ul role="list" class="w-full max-w-md divide-y divide-gray-200">
-            <li v-for="todo in todos" class="relative py-5 bg-white ">
+            <li v-for="todo in todos" :key="todo.text" class="relative py-5 bg-white">
               <div class="flex mt-1 rounded-md shadow-sm">
                 <div class="relative flex items-stretch flex-grow focus-within:z-10">
                   <input v-model="todo.text" type="text" name="todo" id="todo" class="block w-full pl-4 border-gray-300 rounded-none rounded-l-md focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Type your todo">
